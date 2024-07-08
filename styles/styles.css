@@ -45,3 +45,12 @@ body {
 #waitingSpinner {
     /* Add styles for the spinner */
 }
+
+/* Lazy loaded images */
+img.lazy {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+img.lazy[src] {
+    opacity: 1;
+}
