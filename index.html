@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keynote</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="preload" href="nextpage.html" as="document">
 </head>
 <body id="body">
     <div id="stageArea">
@@ -19,27 +18,6 @@
     <div id="waitingIndicator">
         <div id="waitingSpinner"></div>
     </div>
-    <script src="assets/player/main.js" defer></script>
-    <script>
-        // Lazy load images
-        document.addEventListener("DOMContentLoaded", function() {
-            let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-            if ("IntersectionObserver" in window) {
-                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            let lazyImage = entry.target;
-                            lazyImage.src = lazyImage.dataset.src;
-                            lazyImage.classList.remove("lazy");
-                            lazyImageObserver.unobserve(lazyImage);
-                        }
-                    });
-                });
-                lazyImages.forEach(function(lazyImage) {
-                    lazyImageObserver.observe(lazyImage);
-                });
-            }
-        });
-    </script>
+    <script src="assets/player/main.js"></script>
 </body>
 </html>
